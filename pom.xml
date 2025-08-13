@@ -20,7 +20,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.boot.version>3.2.6</spring.boot.version>
         <postgresql.version>42.7.3</postgresql.version>
-        <liquibase.version>4.27.0</liquibase.version>
+        <liquibase.version>4.24.0</liquibase.version>
     </properties>
 
     <dependencyManagement>
