@@ -8,7 +8,7 @@ import com.example.product.service.UserService;
 import com.example.product.service.ProductService;
 import com.example.product.model.Product;
 
-@SpringBootApplication(scanBasePackages = {"com.example.product.service", "com.example.product.repository", "com.example.product.model", "com.example.product.controller"})
+@SpringBootApplication
 public class MainApp {
     public static void main(String[] args) {
         SpringApplication.run(MainApp.class, args);
