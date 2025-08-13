@@ -18,8 +18,8 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public void createUser(String username) {
-        userRepository.save(new User(username));
+    public void createUser(String name, String email) {
+        userRepository.save(new User(name, email));
     }
 
     public void deleteUser(Long id) {

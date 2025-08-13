@@ -2,6 +2,7 @@ package com.example.product.model;
 
 import jakarta.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
@@ -24,6 +25,9 @@ public class Product {
     @Column(name = "user_id", nullable = false)
     private Long userId;
 
+    @Column(name = "created_at", nullable = false)
+    private LocalDateTime createdAt;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", insertable = false, updatable = false)
     private User user;
@@ -39,6 +43,7 @@ public class Product {
         this.balance = balance;
         this.productType = productType;
         this.userId = userId;
+        this.createdAt = LocalDateTime.now();
     }
 
     public Long getId() {
@@ -81,6 +86,14 @@ public class Product {
         this.userId = userId;
     }
 
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
     public User getUser() {
         return user;
     }
@@ -115,6 +128,7 @@ public class Product {
                 ", balance=" + balance +
                 ", productType=" + productType +
                 ", userId=" + userId +
+                ", createdAt=" + createdAt +
                 '}';
     }
 } 

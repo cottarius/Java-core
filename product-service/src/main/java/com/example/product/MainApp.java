@@ -18,13 +18,13 @@ public class MainApp {
     public CommandLineRunner demo(UserService userService, ProductService productService) {
         return (args) -> {
             System.out.println("=== Работа с пользователями ===");
-            userService.createUser("dave");
+            userService.createUser("Dave Johnson", "dave@example.com");
             userService.getAllUsers().forEach(user ->
-                    System.out.println(user.getId() + ": " + user.getUsername())
+                    System.out.println(user.getId() + ": " + user.getName() + " (" + user.getEmail() + ")")
             );
             var user = userService.getUser(1L);
             if (user != null)
-                System.out.println("Получен: " + user.getUsername());
+                System.out.println("Получен: " + user.getName());
             
             System.out.println("\n=== Работа с продуктами ===");
 
