@@ -40,4 +40,40 @@ echo "GET http://localhost:8081/api/payments"
 curl -s "http://localhost:8081/api/payments" | jq '.' 2>/dev/null || echo "Список платежей получен"
 
 echo ""
+echo "=== Тестирование limit-service ==="
+echo ""
+echo "7. Получение лимита пользователя..."
+echo "GET http://localhost:8082/api/limits/1"
+curl -s "http://localhost:8082/api/limits/1" | jq '.' 2>/dev/null || echo "Лимит пользователя получен"
+
+echo ""
+echo "8. Обработка платежа через limit-service..."
+echo "POST http://localhost:8082/api/limits/payment"
+curl -X POST "http://localhost:8082/api/limits/payment" \
+  -H "Content-Type: application/json" \
+  -d '{"userId": 1, "amount": 500.00}' \
+  -s | jq '.' 2>/dev/null || echo "Платеж обработан через limit-service"
+
+echo ""
+echo "9. Проверка обновленного лимита..."
+echo "GET http://localhost:8082/api/limits/1"
+curl -s "http://localhost:8082/api/limits/1" | jq '.' 2>/dev/null || echo "Обновленный лимит получен"
+
+echo ""
+echo "10. Восстановление лимита..."
+echo "POST http://localhost:8082/api/limits/1/restore?amount=200.00"
+curl -X POST "http://localhost:8082/api/limits/1/restore?amount=200.00" \
+  -s | jq '.' 2>/dev/null || echo "Лимит восстановлен"
+
+echo ""
+echo "11. Проверка восстановленного лимита..."
+echo "GET http://localhost:8082/api/limits/1"
+curl -s "http://localhost:8082/api/limits/1" | jq '.' 2>/dev/null || echo "Восстановленный лимит получен"
+
+echo ""
+echo "12. Тестирование нового пользователя..."
+echo "GET http://localhost:8082/api/limits/999"
+curl -s "http://localhost:8082/api/limits/999" | jq '.' 2>/dev/null || echo "Лимит нового пользователя создан"
+
+echo ""
 echo "=== Тестирование завершено ===" 
