@@ -44,8 +44,7 @@ public class Limit {
     protected void onUpdate() {
         updatedAt = LocalDateTime.now();
     }
-    
-    // Constructors
+
     public Limit() {}
     
     public Limit(Long userId, BigDecimal dailyLimit) {
@@ -54,8 +53,7 @@ public class Limit {
         this.remainingLimit = dailyLimit;
         this.limitDate = LocalDate.now();
     }
-    
-    // Getters and Setters
+
     public Long getId() {
         return id;
     }

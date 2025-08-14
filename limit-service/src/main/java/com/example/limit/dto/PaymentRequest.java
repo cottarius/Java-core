@@ -18,8 +18,7 @@ public class PaymentRequest {
         this.userId = userId;
         this.amount = amount;
     }
-    
-    // Getters and Setters
+
     public Long getUserId() {
         return userId;
     }

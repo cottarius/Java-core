@@ -17,8 +17,7 @@ public class LimitResponse {
         this.remainingLimit = remainingLimit;
         this.limitDate = limitDate;
     }
-    
-    // Getters and Setters
+
     public Long getUserId() {
         return userId;
     }
