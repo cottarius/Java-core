@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.24.xsd">
+
+    <changeSet id="002" author="limit-service">
+        <insert tableName="user_limits">
+            <column name="user_id">1</column>
+            <column name="daily_limit">10000.00</column>
+            <column name="remaining_limit">10000.00</column>
+            <column name="limit_date" valueComputed="CURRENT_DATE"/>
+            <column name="created_at" valueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueComputed="CURRENT_TIMESTAMP"/>
+        </insert>
+        
+        <insert tableName="user_limits">
+            <column name="user_id">2</column>
+            <column name="daily_limit">10000.00</column>
+            <column name="remaining_limit">10000.00</column>
+            <column name="limit_date" valueComputed="CURRENT_DATE"/>
+            <column name="created_at" valueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueComputed="CURRENT_TIMESTAMP"/>
+        </insert>
+        
+        <insert tableName="user_limits">
+            <column name="user_id">3</column>
+            <column name="daily_limit">10000.00</column>
+            <column name="remaining_limit">10000.00</column>
+            <column name="limit_date" valueComputed="CURRENT_DATE"/>
+            <column name="created_at" valueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueComputed="CURRENT_TIMESTAMP"/>
+        </insert>
+        
+        <!-- Добавляем еще несколько пользователей для примера -->
+        <insert tableName="user_limits">
+            <column name="user_id">4</column>
+            <column name="daily_limit">10000.00</column>
+            <column name="remaining_limit">10000.00</column>
+            <column name="limit_date" valueComputed="CURRENT_DATE"/>
+            <column name="created_at" valueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueComputed="CURRENT_TIMESTAMP"/>
+        </insert>
+        
+        <insert tableName="user_limits">
+            <column name="user_id">5</column>
+            <column name="daily_limit">10000.00</column>
+            <column name="remaining_limit">10000.00</column>
+            <column name="limit_date" valueComputed="CURRENT_DATE"/>
+            <column name="created_at" valueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueComputed="CURRENT_TIMESTAMP"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.24.xsd">
+
+    <changeSet id="004" author="product-service">
+        <insert tableName="products">
+            <column name="account_number" value="ACC001"/>
+            <column name="balance" value="1000.00"/>
+            <column name="product_type" value="ACCOUNT"/>
+            <column name="user_id" value="1"/>
+            <column name="created_at" valueDate="2024-01-01T00:00:00"/>
+        </insert>
+        <insert tableName="products">
+            <column name="account_number" value="ACC002"/>
+            <column name="balance" value="2500.00"/>
+            <column name="product_type" value="ACCOUNT"/>
+            <column name="user_id" value="2"/>
+            <column name="created_at" valueDate="2024-01-01T00:00:00"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog> 
