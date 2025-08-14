@@ -12,6 +12,7 @@
     <modules>
         <module>product-service</module>
         <module>payment-service</module>
+        <module>limit-service</module>
     </modules>
 
     <properties>

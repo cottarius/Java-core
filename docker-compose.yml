@@ -19,5 +19,23 @@ services:
       timeout: 5s
       retries: 5
 
+  postgres-limit:
+    image: postgres:15
+    container_name: java-core-postgres-limit
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: limit_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_limit_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
 volumes:
-  postgres_data: 
+  postgres_data:
+  postgres_limit_data: 
